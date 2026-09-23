@@ -5,3 +5,129 @@ description = "AI-powered software archaeology for uncovering the history and ra
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
+
+[dependency-groups]
+dev = [
+    "black>=26.5.1",
+    "pre-commit-hooks>=6.0.0",
+    "pyright>=1.1.414",
+    "ruff>=0.16.8",
+]
+
+# ──────────────────────────────────────────────
+# Black
+# ──────────────────────────────────────────────
+
+[tool.black]
+line-length = 88
+target-version = ["py314"]
+preview = false
+
+
+# ──────────────────────────────────────────────
+# Ruff
+# ──────────────────────────────────────────────
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"
+
+exclude = [
+    ".git",
+    ".venv",
+    "build",
+    "dist",
+]
+
+[tool.ruff.lint]
+select = [
+    # Pyflakes
+    "F",
+
+    # pycodestyle
+    "E",
+    "W",
+
+    # isort
+    "I",
+
+    # pyupgrade
+    "UP",
+
+    # flake8-bugbear
+    "B",
+
+    # flake8-simplify
+    "SIM",
+
+    # flake8-comprehensions
+    "C4",
+
+    # Ruff-specific rules
+    "RUF",
+]
+
+ignore = [
+    # Black handles line length / formatting
+    "E501",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+    "S101",
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-wrap-aliases = true
+known-first-party = ["palimpsest"]
+
+
+# ──────────────────────────────────────────────
+# Pyright
+# ──────────────────────────────────────────────
+
+[tool.pyright]
+include = ["src", "tests"]
+
+exclude = [
+    "**/__pycache__",
+    ".venv",
+    "build",
+    "dist",
+    "**/node_modules",
+    ".venv",
+    "**/.*",
+]
+
+typeCheckingMode = "strict"
+
+pythonVersion = "3.14"
+venvPath = "."
+venv = ".venv"
+
+reportMissingImports = "error"
+reportMissingTypeStubs = "warning"
+reportUnknownVariableType = "error"
+reportUnknownMemberType = "error"
+reportUnknownArgumentType = "error"
+reportUnknownParameterType = "error"
+reportUntypedFunctionDecorator = "error"
+reportUntypedClassDecorator = "error"
+reportUntypedBaseClass = "error"
+reportUntypedNamedTuple = "error"
+reportPrivateUsage = "error"
+reportUnusedImport = "error"
+reportUnusedVariable = "error"
+reportUnusedClass = "error"
+reportUnusedFunction = "error"
+reportOptionalMemberAccess = "error"
+reportOptionalSubscript = "error"
+reportOptionalCall = "error"
+reportOptionalIterable = "error"
+reportOptionalContextManager = "error"
+reportArgumentType = "error"
+reportAssignmentType = "error"
+reportReturnType = "error"
+reportCallIssue = "error"
+reportAttributeAccessIssue = "error"
