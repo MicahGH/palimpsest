@@ -1,2 +1,137 @@
+# ──────────────────────────────────────────────
+# Python
+# ──────────────────────────────────────────────
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+*.so
+
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+
+# ──────────────────────────────────────────────
+# Virtual environments
+# ──────────────────────────────────────────────
+
+.venv/
+venv/
+env/
+ENV/
+
+
+# ──────────────────────────────────────────────
+# uv
+# ──────────────────────────────────────────────
+
+# Keep uv.lock committed for reproducible builds.
+# uv.lock is intentionally NOT ignored.
+
+
+# ──────────────────────────────────────────────
+# Testing / coverage
+# ──────────────────────────────────────────────
+
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.pyre/
+.hypothesis/
+
+
+# ──────────────────────────────────────────────
+# Type checking / linting
+# ──────────────────────────────────────────────
+
+.pyright/
+.ruff_cache/
+
+
+# ──────────────────────────────────────────────
+# FastAPI / local application files
+# ──────────────────────────────────────────────
+
+*.log
+logs/
+
+
+# ──────────────────────────────────────────────
+# Environment variables / secrets
+# ──────────────────────────────────────────────
+
 .env
-.venv
+.env.*
+!.env.example
+
+
+# ──────────────────────────────────────────────
+# Docker
+# ──────────────────────────────────────────────
+
+docker-compose.override.yml
+
+
+# ──────────────────────────────────────────────
+# PostgreSQL / local data
+# ──────────────────────────────────────────────
+
+postgres_data/
+*.sql.gz
+
+
+# ──────────────────────────────────────────────
+# IDEs
+# ──────────────────────────────────────────────
+
+.idea/
+.vscode/
+*.code-workspace
+
+# VS Code local history
+.history/
+
+
+# ──────────────────────────────────────────────
+# OS
+# ──────────────────────────────────────────────
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+Thumbs.db
+Desktop.ini
+
+
+# ──────────────────────────────────────────────
+# Temporary files
+# ──────────────────────────────────────────────
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
